@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    public function projects () {
-        return $this->hasMany(project::class);
+    public function projects() {
+        return $this->hasMany(Project::class);
     }
 }

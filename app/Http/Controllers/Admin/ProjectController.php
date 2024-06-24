@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Category;
+
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Requests\StoreProjectRequest;
 
@@ -28,7 +30,8 @@ class ProjectController extends Controller
     public function create()
     {
         $project = new Project();
-        return view("admin.projects.create", compact('project'));
+        $categories = Category::all();
+        return view("admin.projects.create", compact('project', 'categories'));
     }
 
     /**
@@ -51,7 +54,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        // dd($example;
+        // dd($example);
         return view('admin.projects.show', compact('project'));
     }
 
@@ -60,7 +63,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $categories = Category::all();
+        return view('admin.projects.edit', compact('project', 'categories'));
     }
 
     /**

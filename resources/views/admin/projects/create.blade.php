@@ -28,6 +28,16 @@
             </div>
 
             <div class="mb-3">
+				<label for="category" class="form-label">Seleziona categoria</label>
+				<select class="form-select" name="category_id" id="category">
+					<option value="">Seleziona</option>
+					@foreach ($categories as $category)
+						<option value="{{ $category->id }}">{{ $category->name }}</option>
+					@endforeach
+				</select>
+			</div>
+
+            <div class="mb-3">
                 <label for="description" class="form-label">Descrizione</label>
                 <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
                     rows="3">{{ $project->description }}</textarea>

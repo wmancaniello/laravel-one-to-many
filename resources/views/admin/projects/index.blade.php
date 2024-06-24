@@ -20,6 +20,7 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Titolo</th>
+                    <th scope="col">Categoria</th>
                     <th scope="col">Slug</th>
                     <th scope="col">Azione</th>
                 </tr>
@@ -29,6 +30,7 @@
                     <tr>
                         <th scope="row">{{ $project->id }}</th>
                         <td>{{ $project->title }}</td>
+                        <td>{{ $project->category?->name }}</td>
                         <td>{{ $project->slug }}</td>
                         <td>
                             <div class="d-flex gap-2">
